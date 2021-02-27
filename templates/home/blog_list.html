@@ -1,0 +1,57 @@
+{% extends 'home/base.html' %} {% block content %} {% load static %}
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>blog</h3>
+                </div>
+            </div>
+        </div>
+        </a>
+
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    {% for blog in object_list %}
+                    <a href="{% url 'blog_detail' blog.pk %}">
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{{ MEDIA_URL }}{{ blog.image.url }}" alt="">
+
+                                <a href="#" class="blog_item_date">
+                                    <h3>{{blog.date}}</h3>
+
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="{% url 'blog_detail' blog.pk  %}">
+
+                                    <h2>{{blog.title | capfirst}}</h2>
+
+                                    <p>{{blog.body | capfirst}}</p>
+                                    <ul class="blog-info-link">
+                                        <li><a href="#"><i class="fa fa-user"></i> {{blog.author  | capfirst}}</a></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </article>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
