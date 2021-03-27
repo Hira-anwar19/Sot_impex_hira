@@ -1,0 +1,60 @@
+{% extends 'home/base.html' %} {% block content %} {%load static%}
+<div class="Estimate_area overlay ">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-xl-4 col-lg-4 col-md-5 ">
+                <div class="Estimate_info ">
+                    <h3>Get free Estimate</h3>
+
+                    <a href="# " class="boxed-btn3 ">+92 300 4330318</a>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-7 ">
+                <div class="form ">
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row ">
+
+                            <div class="col-xl-6 ">
+                                <div class="input_field ">
+                                    <input type="text " placeholder="Your name" name="name">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 ">
+                                <div class="input_field ">
+                                    <input type="email " placeholder="Email" name="email">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 ">
+                                <div class="input_field ">
+                                    <input type="text " placeholder="phone number" name="ph_no">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 ">
+                                <div class="input_field ">
+                                    <input type="text " placeholder="service" name="service">
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xl-12 ">
+                                <div class="input_field ">
+                                    <textarea placeholder="write your query " name="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 ">
+                                <div class="input_field ">
+                                    <button class="boxed-btn3-line " type="submit ">Send Estimate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
